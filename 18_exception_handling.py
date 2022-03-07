@@ -26,10 +26,11 @@ finally
 #     result = 100/2
 #     print(result)
 
-dt = {'name':'ravi','age':30}
+# dt = {'name':'ravi','age':30}
 # # dt['salary']
 # key = input('Enter a key to get the data: ')
 
+'''
 try:
     print(dt[key])
 except KeyError:
@@ -38,6 +39,21 @@ except NameError:
     print('Given name is not defined')
 except ValueError:
     print('Value is incorrect')
+'''
+dt = {'name':'ravi','age':30}
+
+try:
+    result = 100/0
+    print('try block')
+except Exception as err:
+    print('error block')
+else:
+    print('else block')
+finally:
+    print('finally block')
+
+''' on success : try -> else -> finally '''
+''' on failure : try -> except -> finally'''
 
 
 
