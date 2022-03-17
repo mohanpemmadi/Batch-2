@@ -1,0 +1,24 @@
+install progresql server:
+
+	https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+	
+guide :
+
+	https://www.guru99.com/download-install-postgresql.html
+	
+install pgadmin:
+
+	https://www.postgresql.org/ftp/pgadmin/pgadmin4/v6.4/windows/
+	
+install psycopg2:
+
+	pip install psycopg2
+
+postgresql tutorial:
+
+	https://www.w3schools.blog/postgresql-tutorial
+		
+		
+		
+		
+
