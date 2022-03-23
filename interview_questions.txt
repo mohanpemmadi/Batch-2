@@ -1,0 +1,331 @@
+# What are the benefits of using Python:
+	Python is a high-level, 
+	interpreted, 
+	dynamic typing,
+	object oriented lang,
+	platform independent
+	general-purpose programming language. Being a general-purpose language, 
+	it can be used to build almost any type of application with the right libraries.
+	
+	eg : standalone apps,web apps,automation testing,data science etc
+	
+# datatypes
+
+	numbers - int and float
+	boolean - True or False
+	string
+	list
+	tuple
+	dict
+	set
+	
+# list vs tuple
+	Both are collection of ordered python object
+	List is mutable and tuple is immutable
+	The tuple is faster than the list because of static in nature. 
+	
+# mutable vs immutable
+	An object whose internal state cannot be changed is called immutable for example a number, a string, and a tuple.
+	An object whose internal state can be changed is called mutable for example a list, a set, and a dictionary.
+
+# List comprehension:
+	List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list
+
+	eg: [i for i in range(10) if i%2==0]
+   
+# Lambada
+	Lambda is an anonymous function in Python, that can accept any number of arguments, but can only have a single expression
+	we use lambda functions when we require a nameless function for a short period of time
+
+	eg: lambda x: x*x
+
+# Iterators
+	Iterables - Iterables are objects, which one can iterate over, like list,tuple,dictionary etc
+	An iterator is an object that can be iterated upon, we can use iter method to create a iterator.
+	
+	eg: iter([1,2,3,4,5])
+	
+# Generators
+	A generator is a function that returns an generator object which we can iterate over (one value at a time).
+	Generator function contains yield keyword instead of return
+		
+	Generator memory friendly and is preferred since it only produces one item at a time.
+	
+	eg: def double(lst):
+			for i in lst:
+			    yield i*i
+		double([1,2,3,4])
+
+# Decorators:
+	Decorators are functions that add functionality to an existing function
+	without changing the structure of the function itself.
+	
+	eg:
+	
+	def sample_decorator(fun):
+		def inner():
+			return fun()
+		return inner
+		
+	@sample_decorator
+	def hello():
+		return 'hello world'
+	
+# *args vs **kwags:
+	*args is a special syntax used in the function definition to pass n number of position arguments.
+	**kwargs is a special syntax used in the function definition to pass n number of keyworded arguments.
+	
+	args and kwargs names are user defined
+	
+# pypi
+	The Python Package Index (PyPI) is a repository of software for the Python programming language.
+	PyPI helps you find and install software developed and shared by the Python community
+	
+# pip:
+	pip is the package installer for Python. You can use pip to install packages from the Python Package Index
+	
+# what happens if we use -> pip install package-name # requests
+
+	The pip install <package> command always looks for the latest version of the package and installs it.
+
+# PEP8
+	PEP stands for Python Enhancement Proposal. A PEP is an official design document providing information to the Python community,
+	or describing a new feature for Python or its processes. PEP 8 is especially important since it documents the style guidelines 
+	for Python Code.
+	
+	eg: value = 100
+	
+# constractor or __init__ method
+	__init__ is a constructor.it's automatically called to allocate memory when a new object is created.
+	
+	class ABC:
+		def __init(self):
+			pass
+	
+	obj = ABC()
+	
+# self:
+	Self is used to represent the instance of the class. 
+	With this keyword, you can access the attributes and methods of the class in python
+	
+# super keyword
+	we can use super keyword to call the parent class methods from child class
+	
+	class Animal(object):
+	  def __init__(self, animal_type):
+		print('Animal Type:', animal_type)
+    
+	class Mammal(Animal):
+	  def __init__(self):
+
+		# call superclass
+		super().__init__('Mammal')
+		print('Mammals give birth directly')
+    
+	dog = Mammal()
+
+
+# inheritance & multiple inheritance
+	
+	inheritance - deriving properties and methods from super class to child class
+	multiple inheritance - deriving properties and methods from multiple super class to one child class
+	
+
+# static method vs class method
+
+	class method - A class method receives the class as a first argument, just like an instance method receives the instance 
+					A class method is a method that is bound to the class and not the object of the class.
+	
+	
+	static methods - A static method does not receive an implicit first argument. 
+				
+					
+	class MyClass:
+		def method(self):
+			return 'instance method called', self
+
+		@classmethod
+		def classmethod(cls):
+			return 'class method called', cls
+
+		@staticmethod
+		def staticmethod():
+			return 'static method called'
+					
+		
+# pickling vs unpickling
+
+	pickling - Any object in Python can be serialized into a byte stream and dumped as a file.
+	
+	import pickle
+	pickle.dump()
+	
+	unpickling - It deserializes the byte stream to recreate the objects stored in the file.
+	pickle.load()
+	
+	
+# multithreading vs multiprocessing
+
+	The threading module uses threads, the multiprocessing module uses processes. 
+	The difference is that threads run in the same memory space, while processes have separate memory. 
+	
+	This makes it a bit harder to share objects between processes with multiprocessing. 
+	Since threads use the same memory, precautions have to be taken or two threads will write to the same memory at the same time. 
+	This is what the global interpreter lock is for.
+
+
+# memory management:
+	Memory management in Python is handled by the Python Memory Manager. 
+	The memory allocated by the manager is in form of a private heap space dedicated to Python.
+	All Python objects are stored in this heap and being private, it is inaccessible to the programmer. 
+	Though, python does provide some core API functions to work upon the private heap space.
+	Additionally, Python has an in-built garbage collection to recycle the unused memory for the private heap space.
+
+# use of pyc file
+	.py files contain the source code of a program. Whereas, .pyc file contains the bytecode of your program.
+	We get bytecode after compilation of .py file (source code). .pyc files are not created for all the files that you run.
+	It is only created for the files that you import.
+	
+	Before executing a python program python interpreter checks for the compiled files.
+	If the file is present, the virtual machine executes it. If not found, it checks for .py file. 
+	If found, compiles it to .pyc file and then python virtual machine executes it.
+	Having .pyc file saves you the compilation time.
+
+# python compiled or interpreted?
+
+	python both compiled and interpreted, python source code compiled to byte code and run on python viraual machine(pvm) 
+	like interpreted language
+
+	An Interpreted language executes its statements line by line. Languages such as Python, 
+	Javascript, R, PHP, and Ruby are prime examples of Interpreted languages. 
+	Programs written in an interpreted language runs directly from the source code, with no intermediary compilation step.
+	
+# module vs package
+
+	module -  module is a python file that can be imported inside another file.
+	
+	package - A package is basically a directory with Python files.
+	A directory must contain a file named __init__.py in order for Python to consider it as a package. 
+	
+# break and continue
+
+	break: to break the loop at a given condition.
+	continue: to skip the loop at a given condition.
+
+# docstring
+
+	Python docstrings are strings used right after the definition of a function, method, class, or module.
+	They are used to document our code.
+	
+	def square(n):
+    '''Takes in a number n, returns the square of n'''
+    return n**2
+
+	We can access these docstrings using the __doc__ attribute.
+
+# pass by value vs pass by reference
+
+	Pass by value: Copy of the actual object is passed. 
+	Changing the value of the copy of the object will not change the value of the original object.
+
+	Pass by reference: Reference to the actual object is passed. 
+	Changing the value of the new object will change the value of the original object.
+
+# pass
+
+	The pass keyword represents a null operation in Python. 
+	It is generally used for the purpose of filling up empty blocks of code which may execute during runtime but has yet to be written.
+
+# What is docstring in Python?
+	Documentation string or docstring is a multiline string used to document a specific code segment.
+	The docstring should describe what the function or method does.
+	
+# How do you access parent members in the child class?
+
+	By using Parent class name: You can use the name of the parent class to access the attributes as shown in the example below:
+	
+    class Father:
+    
+		def blood_group(self):
+			print('A +ve')
+    
+	class Child(Father):
+    
+		def blood_group(self):
+        
+			print('B +ve')
+			Father.blood_group(self)
+    
+	
+	By using super(): The parent class members can be accessed in child class using the super keyword.
+	class Father:
+    
+		def blood_group(self):
+			print('A +ve')
+    
+	class Child(Father):
+    
+		def blood_group(self):
+        
+			print('B +ve')
+			Super.blood_group()
+			
+# Are access specifiers used in python?
+
+	Python does not make use of access specifiers specifically like private, public, protected, etc.
+	However, it does not derive this from any variables. It has the concept of imitating the behaviour of variables 
+	by making use of a single (protected) or double underscore (private) as prefixed to the variable names.
+	By default, the variables without prefixed underscores are public.
+	
+	class Father:
+	
+		def __init__(self,name,age,salary):
+			self.name = name
+			self._age = age
+			self.__salary = salary
+			
+	
+# How will you check if a class is a child of another class?
+
+	This is done by using a method called issubclass() provided by python.
+	
+	class Parent(object):
+	   pass   
+	 
+	class Child(Parent):
+	   pass   
+	 
+	# Driver Code
+	print(issubclass(Child, Parent))    #True
+	print(issubclass(Parent, Child))    #False
+	
+# GIL
+
+	The Python Global Interpreter Lock or GIL, in simple words, is a mutex (or a lock) 
+	that allows only one thread to hold the control of the Python interpreter.
+
+	This means that only one thread can be in a state of execution at any point of time.
+	
+# Map,Filter and Reduce
+
+	Map -  The map function takes function as a first argument and applies a given function to each item in the sequence.
+	eg: 
+	list(map(lambda x: x*100,[1,2,3,4]))
+
+	Filter - The filter function takes other function as a first argument and applies the given condition to each item in the sequence.
+	eg: 
+	list(filter(lambda x: (x%3==0) ,(1,2,3,4)))
+	
+	Reduce -it takes function as a first argument and applies the given condition to return consolidated result.
+	eg:
+	from functools import reduce
+	reduce(lambda x,y:x+y,[1,2,3,4,5])
+	
+# context manager or "with"
+
+	context manager take care of resource allocation and release
+	
+# virtual environment
+
+	A virtual environment is a tool that helps to keep dependencies required by different projects
+	separate by creating isolated python virtual environments for them.
