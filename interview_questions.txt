@@ -89,24 +89,26 @@
 	The pip install <package> command always looks for the latest version of the package and installs it.
 
 # PEP8
-	PEP stands for Python Enhancement Proposal. A PEP is an official design document providing information to the Python community,
-	or describing a new feature for Python or its processes. PEP 8 is especially important since it documents the style guidelines 
-	for Python Code.
+
+	Style Guide for Python Code
 	
-	eg: value = 100
+	Indentation
+	Tabs or Spaces (default 4 spaces)
+	Maximum Line Length(79 characters)
+	Space before after variable decleration(eg: value = 100)
 	
 # constractor or __init__ method
 	__init__ is a constructor.it's automatically called to allocate memory when a new object is created.
 	
 	class ABC:
-		def __init(self):
+		def __init__(self):
 			pass
 	
 	obj = ABC()
 	
 # self:
-	Self is used to represent the instance of the class. 
-	With this keyword, you can access the attributes and methods of the class in python
+	Self is used to represent the current object of a class. 
+	With this keyword, you can access the attributes and methods throughtout of the class
 	
 # super keyword
 	we can use super keyword to call the parent class methods from child class
@@ -127,8 +129,8 @@
 
 # inheritance & multiple inheritance
 	
-	inheritance - deriving properties and methods from super class to child class
-	multiple inheritance - deriving properties and methods from multiple super class to one child class
+	inheritance - deriving properties(varibales & methods) from super class to child class
+	multiple inheritance - deriving properties from multiple super class to one child class
 	
 
 # static method vs class method
@@ -141,6 +143,7 @@
 				
 					
 	class MyClass:
+	
 		def method(self):
 			return 'instance method called', self
 
@@ -155,12 +158,12 @@
 		
 # pickling vs unpickling
 
-	pickling - Any object in Python can be serialized into a byte stream and dumped as a file.
+	pickling - Any object in Python can be converted into a byte stream and dumped as a file/String.
 	
 	import pickle
 	pickle.dump()
 	
-	unpickling - It deserializes the byte stream to recreate the objects stored in the file.
+	unpickling - Reconverting byte stream into python object.
 	pickle.load()
 	
 	
@@ -169,16 +172,12 @@
 	The threading module uses threads, the multiprocessing module uses processes. 
 	The difference is that threads run in the same memory space, while processes have separate memory. 
 	
-	This makes it a bit harder to share objects between processes with multiprocessing. 
-	Since threads use the same memory, precautions have to be taken or two threads will write to the same memory at the same time. 
-	This is what the global interpreter lock is for.
-
 
 # memory management:
 	Memory management in Python is handled by the Python Memory Manager. 
 	The memory allocated by the manager is in form of a private heap space dedicated to Python.
-	All Python objects are stored in this heap and being private, it is inaccessible to the programmer. 
-	Though, python does provide some core API functions to work upon the private heap space.
+	All Python objects are stored in this heap and being private
+	
 	Additionally, Python has an in-built garbage collection to recycle the unused memory for the private heap space.
 
 # use of pyc file
@@ -187,8 +186,8 @@
 	It is only created for the files that you import.
 	
 	Before executing a python program python interpreter checks for the compiled files.
-	If the file is present, the virtual machine executes it. If not found, it checks for .py file. 
-	If found, compiles it to .pyc file and then python virtual machine executes it.
+	If the file is present, the interpreter executes it. If not found, it checks for .py file. 
+	If found, compiles it to .pyc file and then python interpreter executes it.
 	Having .pyc file saves you the compilation time.
 
 # python compiled or interpreted?
@@ -236,26 +235,8 @@
 	The pass keyword represents a null operation in Python. 
 	It is generally used for the purpose of filling up empty blocks of code which may execute during runtime but has yet to be written.
 
-# What is docstring in Python?
-	Documentation string or docstring is a multiline string used to document a specific code segment.
-	The docstring should describe what the function or method does.
 	
 # How do you access parent members in the child class?
-
-	By using Parent class name: You can use the name of the parent class to access the attributes as shown in the example below:
-	
-    class Father:
-    
-		def blood_group(self):
-			print('A +ve')
-    
-	class Child(Father):
-    
-		def blood_group(self):
-        
-			print('B +ve')
-			Father.blood_group(self)
-    
 	
 	By using super(): The parent class members can be accessed in child class using the super keyword.
 	class Father:
@@ -269,21 +250,7 @@
         
 			print('B +ve')
 			Super.blood_group()
-			
-# Are access specifiers used in python?
-
-	Python does not make use of access specifiers specifically like private, public, protected, etc.
-	However, it does not derive this from any variables. It has the concept of imitating the behaviour of variables 
-	by making use of a single (protected) or double underscore (private) as prefixed to the variable names.
-	By default, the variables without prefixed underscores are public.
-	
-	class Father:
-	
-		def __init__(self,name,age,salary):
-			self.name = name
-			self._age = age
-			self.__salary = salary
-			
+						
 	
 # How will you check if a class is a child of another class?
 
@@ -299,13 +266,7 @@
 	print(issubclass(Child, Parent))    #True
 	print(issubclass(Parent, Child))    #False
 	
-# GIL
 
-	The Python Global Interpreter Lock or GIL, in simple words, is a mutex (or a lock) 
-	that allows only one thread to hold the control of the Python interpreter.
-
-	This means that only one thread can be in a state of execution at any point of time.
-	
 # Map,Filter and Reduce
 
 	Map -  The map function takes function as a first argument and applies a given function to each item in the sequence.
