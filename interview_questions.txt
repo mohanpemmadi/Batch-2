@@ -169,7 +169,7 @@
 	
 # multithreading vs multiprocessing
 
-	The threading module uses threads, the multiprocessing module uses processes. 
+	The "threading" module help us to handle threads, the "multiprocessing" module help us to handle processes. 
 	The difference is that threads run in the same memory space, while processes have separate memory. 
 	
 
@@ -197,7 +197,6 @@
 
 	An Interpreted language executes its statements line by line. Languages such as Python, 
 	Javascript, R, PHP, and Ruby are prime examples of Interpreted languages. 
-	Programs written in an interpreted language runs directly from the source code, with no intermediary compilation step.
 	
 # module vs package
 
