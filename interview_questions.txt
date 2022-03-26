@@ -174,13 +174,14 @@
 	
 
 # memory management:
+
 	Memory management in Python is handled by the Python Memory Manager. 
-	The memory allocated by the manager is in form of a private heap space dedicated to Python.
+	The memory allocated by the manager is in form of a private heap space.
 	All Python objects are stored in this heap and being private
 	
 	Additionally, Python has an in-built garbage collection to recycle the unused memory for the private heap space.
 
-# use of pyc file
+# use of .pyc file
 	.py files contain the source code of a program. Whereas, .pyc file contains the bytecode of your program.
 	We get bytecode after compilation of .py file (source code). .pyc files are not created for all the files that you run.
 	It is only created for the files that you import.
